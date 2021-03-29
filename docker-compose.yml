@@ -1,0 +1,47 @@
+version: '2'
+services:
+  influxdb:
+  # image: influxdb:latest
+    image: influxdb:1.8.4-alpine
+    ports:
+      - '8086:8086'
+    volumes:
+      - influxdb-storage:/var/lib/influxdb
+    environment:
+      - INFLUXDB_DB=db0
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=admin
+# chronograf:
+#    image: chronograf:latest
+#    ports:
+#      - '127.0.0.1:8888:8888'
+#    volumes:
+#      - chronograf-storage:/var/lib/chronograf
+#    depends_on:
+#      - influxdb
+#    environment:
+#      - INFLUXDB_URL=http://influxdb:8086
+#      - INFLUXDB_USERNAME=${INFLUXDB_USERNAME}
+#      - INFLUXDB_PASSWORD=${INFLUXDB_PASSWORD}
+  grafana:
+    image: grafana/grafana:latest
+    user: "0"
+    ports:
+      - '80:3000'      
+      - '3000:3000'
+    volumes:
+      - ./grafana-storage:/var/lib/grafana
+        # - ./grafana-provisioning:/etc/grafana/provisioning
+      - ~/.aws/credentials:/home/grafana/.aws/credentials
+    depends_on:
+      - influxdb
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=jb4w&ZROcqH#
+      - GF_SERVER_ROOT_URL = https://monitor.cantodochef.com.br
+      - GF_SERVER_DOMAIN = monitor.cantodochef.com.br
+      - GF_SERVER_HTTP_PORT = 80
+volumes:
+  influxdb-storage:
+  #chronograf-storage:
+  grafana-storage:
