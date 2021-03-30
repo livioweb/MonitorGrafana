@@ -4,11 +4,11 @@
 https://grafana.com/grafana/dashboards/11777
 
 ## Monitor de instancias
-| in uso:  https://grafana.com/grafana/dashboards/928 
-** https://grafana.com/grafana/dashboards/11912 **
-https://grafana.com/grafana/dashboards/914
-https://grafana.com/grafana/dashboards/1443
-https://grafana.com/grafana/dashboards/5955
+>  in uso:  https://grafana.com/grafana/dashboards/928 
+* > https://grafana.com/grafana/dashboards/11912 **
+* > https://grafana.com/grafana/dashboards/914
+* > https://grafana.com/grafana/dashboards/1443
+* > https://grafana.com/grafana/dashboards/5955
 
 ## GeoMonitoramento
 https://grafana.com/grafana/dashboards/8342
