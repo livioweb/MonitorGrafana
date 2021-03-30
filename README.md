@@ -19,5 +19,7 @@ https://grafana.com/grafana/dashboards/8531
 ## Exemplo de queris de varios tipos de servidores
 https://grafana.com/grafana/dashboards/61
 
+## MOnitor MySQL
+https://grafana.com/grafana/dashboards/4031
 -----------
 
