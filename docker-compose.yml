@@ -6,7 +6,7 @@ services:
     ports:
       - '8086:8086'
     volumes:
-      - influxdb-storage:/var/lib/influxdb
+      - ./influxdb-storage:/var/lib/influxdb
     environment:
       - INFLUXDB_DB=db0
       - INFLUXDB_ADMIN_USER=admin
@@ -31,7 +31,7 @@ services:
       - '3000:3000'
     volumes:
       - ./grafana-storage:/var/lib/grafana
-        # - ./grafana-provisioning:/etc/grafana/provisioning
+      - ./grafana-provisioning:/etc/grafana/provisioning
       - ~/.aws/credentials:/home/grafana/.aws/credentials
     depends_on:
       - influxdb
